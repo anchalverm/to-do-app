@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="container-fluid top-margin">
+        <h3 class="text-center mt-5" style="color: orange;">Todo App</h3>
+        <hr>
+        <form class="col-md-12 d-flex" #task = "ngForm" (ngSubmit)="submit(task)">
+            <span class="form-group col-md-6">
+                <input type="text" name="firstname" placeholder="Enter Task" class = "form-control" [(ngModel)]="editObj.firstname">   
+            </span>           
+            <span><button style="margin-left: 10px;" class="btn btn-primary" type="submit"><b><i class="fa fa-plus" aria-hidden="true"></i></b> Add</button></span>
+            <pre></pre>
+            </form>
+            <div class="Details col-md-6 mt-3">
+              <table class="table table-striped">
+                  <tbody>
+                    <tr *ngFor="let obj of resultsArray">
+                      <td>{{ obj.firstname }}</td>
+                      <td><button (click)="edit(obj)" style="float: right;"><i class="fa fa-edit" aria-hidden="true"></i></button></td>
+                      <td><button (click)="delete(obj)" style="float: right;"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              
+    </div>
+</div>
